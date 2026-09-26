@@ -66,8 +66,8 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-o
 
 .nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:50; background:var(--nav-bg); backdrop-filter:blur(8px); border-bottom:1px solid var(--border);}
 .nav-inner{display:flex; align-items:center; justify-content:space-between; padding-top:1rem; padding-bottom:1rem; gap:1rem;}
-.logo{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.15rem;}
-.logo span{color:var(--accent);}
+.logo{display:inline-flex; align-items:center; color:var(--accent);}
+.logo svg{width:90px; height:46px; display:block;}
 .nav-links{display:flex; gap:1.6rem;}
 .nav-links a{color:var(--text-dim); font-size:.9rem;}
 .nav-links a:hover{color:var(--text);}
@@ -158,7 +158,7 @@ h2{font-size:clamp(1.6rem,3vw,2.1rem); max-width:600px;}
   .hero-inner{grid-template-columns:1fr; text-align:center; padding-bottom:1rem;}
   .lead{margin:1rem auto 0;}
   .hero-actions{justify-content:center;}
-  .hero-graphic{order:-1; max-width:280px; margin:0 auto;}
+  .hero-graphic{max-width:280px; margin:0 auto;}
   .grid-5{grid-template-columns:repeat(2,1fr);}
   .grid-3{grid-template-columns:1fr;}
   .process-caps{grid-template-columns:1fr 1fr;}
@@ -185,11 +185,26 @@ h2{font-size:clamp(1.6rem,3vw,2.1rem); max-width:600px;}
 </style>
 </head>
 <body>
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath clipPathUnits="userSpaceOnUse" id="kc-clip">
+      <path d="M 16.422771,282.15387 H 216.42297 V 179.77877 H 16.422771 Z" clip-rule="evenodd" />
+    </clipPath>
+    <symbol id="icon-logo" viewBox="0 0 144 74">
+      <g transform="translate(-50.000021,-55.010029)">
+        <path fill="currentColor" d="m 140.0902,179.7949 v 38.734 c -5.1812,-3.011 -11.0641,-4.6041 -17.0566,-4.619 -5.175,0.0147 -10.2789,1.2066 -14.9252,3.4853 6.1021,2.9766 11.1773,7.7062 14.5761,13.5836 0.1163,-0.006 0.2327,-0.0103 0.3491,-0.0137 9.4006,5e-4 17.0288,7.6067 17.0566,17.0073 v 0.0515 h 0.002 c -6e-4,9.4205 -7.6378,17.057 -17.0584,17.0566 -0.1105,-0.005 -0.221,-0.0103 -0.3314,-0.0171 -3.3997,5.8892 -8.4817,10.628 -14.5938,13.6083 4.6479,2.272 9.7517,3.4573 14.9252,3.4659 12.2641,-0.0181 23.5747,-6.6178 29.6247,-17.2858 6.0544,10.6757 17.3765,17.2765 29.6495,17.2858 18.8411,-1e-4 34.1148,-15.2738 34.115,-34.1149 -0.006,-0.1652 -0.0141,-0.3303 -0.0229,-0.4954 l -19.3097,8.984 c -3.0381,5.296 -8.6751,8.5643 -14.7806,8.5697 -4.6854,-0.004 -9.1627,-1.9351 -12.3813,-5.34 l 12.8749,-5.9905 16.436,-7.6459 15.8631,-7.3798 c -4.1561,-14.6715 -17.5439,-24.8033 -32.7927,-24.8171 h -0.002 c -9.5768,0.0141 -18.7067,4.0528 -25.1592,11.1296 v -45.2446 l -17.0584,0.002 z m 42.2175,51.1716 c 2.1804,0.005 4.3396,0.4271 6.3608,1.2447 l -22.5535,10.4913 c 2.2978,-6.9976 8.8275,-11.7301 16.1927,-11.7359 z" transform="matrix(0.71999928,0,0,0.71999928,38.175617,-74.440586)" clip-path="url(#kc-clip)" />
+        <path fill="currentColor" d="m 63.331,213.9099 c -18.8411,2e-4 -34.1148,15.2739 -34.115,34.115 2e-4,18.8411 15.2739,34.1148 34.115,34.115 5.175,-0.0147 10.2789,-1.2066 14.9252,-3.4854 -6.1024,-2.977 -11.1776,-7.7073 -14.5761,-13.5854 -0.1163,0.006 -0.2327,0.0104 -0.3491,0.0137 -9.4199,-5e-4 -17.056,-7.6367 -17.0566,-17.0566 -4e-4,-9.4206 7.6361,-17.0578 17.0566,-17.0584 0.1105,0.005 0.221,0.0104 0.3314,0.0171 3.4,-5.8885 8.4819,-10.6267 14.5938,-13.6066 -4.6479,-2.272 -9.7517,-3.4572 -14.9252,-3.4659 v -0.002 z" transform="matrix(0.71999928,0,0,0.71999928,38.175617,-74.440586)" />
+        <path fill="currentColor" d="m 16.4228,179.7941 h 17.0576 v 102.346 H 16.4228 Z" transform="matrix(0.71999928,0,0,0.71999928,38.175617,-74.440586)" />
+        <path fill="currentColor" d="m 110.2399,248.0247 c 0,9.4158 -7.6419,17.0577 -17.0577,17.0577 -9.4158,0 -17.0576,-7.6419 -17.0576,-17.0577 0,-9.4158 7.6418,-17.0577 17.0576,-17.0577 9.4158,0 17.0577,7.6419 17.0577,17.0577" transform="matrix(0.71999928,0,0,0.71999928,38.175617,-74.440586)" />
+      </g>
+    </symbol>
+  </defs>
+</svg>
 <a class="skip-link" href="#main" data-nl="Naar de inhoud">Skip to content</a>
 
 <header class="nav">
   <div class="container nav-inner">
-    <a href="#top" class="logo">Koffie<span>Code</span></a>
+    <a href="#top" class="logo" aria-label="KoffieCode"><svg><use href="#icon-logo"/></svg></a>
     <nav class="nav-links" aria-label="Primary">
       <a href="#services" data-nl="Diensten">Services</a>
       <a href="#who" data-nl="Voor wie">Who we help</a>
@@ -212,7 +227,7 @@ h2{font-size:clamp(1.6rem,3vw,2.1rem); max-width:600px;}
     <div class="container hero-inner">
       <div>
         <h1><span data-nl="Strategie eerst.">Strategy first.</span><span class="dim" data-nl="Technologie pas daarna.">Technology second.</span></h1>
-        <p class="lead" data-nl="Websites, cloudsoftware en de hardware die alles verbindt — degelijk gebouwd voor het Nederlandse mkb.">Websites, cloud software, and the hardware that connects them — built properly for Dutch SMEs.</p>
+        <p class="lead" data-nl="Bij KoffieCode bouwen we websites, cloudsoftware en de hardware die alles verbindt — degelijk, voor het Nederlandse mkb.">At KoffieCode, we build websites, cloud software, and the hardware that connects them — properly engineered for Dutch SMEs.</p>
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary" data-nl="Plan een audit">Book an audit</a>
           <a href="#services" class="btn btn-ghost" data-nl="Bekijk ons werk">See our work</a>
@@ -469,7 +484,7 @@ h2{font-size:clamp(1.6rem,3vw,2.1rem); max-width:600px;}
 <footer class="footer">
   <div class="container footer-inner">
     <div>
-      <p class="logo">Koffie<span>Code</span></p>
+      <p class="logo" aria-label="KoffieCode"><svg><use href="#icon-logo"/></svg></p>
       <p data-nl="Gevestigd in Gouda, actief in de Randstad, Utrecht en Noord-Brabant.">Based in Gouda, working across the Randstad, Utrecht and North Brabant.</p>
     </div>
     <div class="footer-col">
