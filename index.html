@@ -65,7 +65,7 @@ section{padding:5.5rem 0;}
 a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
 
 .nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:50; background:var(--nav-bg); backdrop-filter:blur(8px); border-bottom:1px solid var(--border);}
-.nav-inner{display:flex; align-items:center; justify-content:space-between; padding:1rem 0; gap:1rem;}
+.nav-inner{display:flex; align-items:center; justify-content:space-between; padding-top:1rem; padding-bottom:1rem; gap:1rem;}
 .logo{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.15rem;}
 .logo span{color:var(--accent);}
 .nav-links{display:flex; gap:1.6rem;}
@@ -167,12 +167,19 @@ h2{font-size:clamp(1.6rem,3vw,2.1rem); max-width:600px;}
   .gantt-label{width:96px; font-size:.76rem;}
   .gantt-axis{margin-left:107px;}
   section{padding:4rem 0;}
+  .why-panel{padding:1.5rem;}
+  .why-table{min-width:400px;}
 }
 @media (max-width:480px){
   .nav .btn-sm{display:none;}
   .grid-5{grid-template-columns:1fr;}
   .process-caps{grid-template-columns:1fr;}
   .footer-inner{grid-template-columns:1fr;}
+  .why-panel{padding:1rem; border-radius:12px;}
+  .why-table{min-width:0;}
+  .why-table th{padding:.4rem .2rem; font-size:.75rem;}
+  .why-table td{padding:.6rem .2rem; font-size:.85rem;}
+  .why-table td:first-child{font-size:.75rem;}
 }
 @media (prefers-reduced-motion:reduce){ *{transition:none !important; animation:none !important;} }
 </style>
